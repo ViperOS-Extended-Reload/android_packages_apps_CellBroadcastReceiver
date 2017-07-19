@@ -8,6 +8,16 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_JAVA_LIBRARIES := telephony-common
 
+LOCAL_RESOURCE_DIR := \
+    $(LOCAL_PATH)/res
+
+# Viper Color Engine
+$(warning *** Including Viper Color Engine ***)
+LOCAL_RESOURCE_DIR += vendor/viper/colorengine/$(LOCAL_PATH)/res
+
+LOCAL_AAPT_FLAGS := \
+    --auto-add-overlay
+
 LOCAL_PACKAGE_NAME := CellBroadcastReceiver
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
